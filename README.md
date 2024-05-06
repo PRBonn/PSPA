@@ -50,12 +50,14 @@ In the specified ```<path/to/export_dir>``` you will find the predicted semantic
 
 In case you want to apply our proposed *merging procedure* you need run the following subsequently
 ```python
+conda activate pspa
 python auxiliary/merge_plants_sem.py --semantics <path/to/previously/predicted/semantics> --plants <path/to/previously/predicted/plant/instances> --export <path/to/merged_export_dir>
 ```
 
 # Training
 Similiarly you can train a new model
 ```python
+conda activate pspa
 python train.py --config ./config/config-phenobench.yaml --export <path/to/export_dir>
 ```
 

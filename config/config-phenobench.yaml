@@ -1,0 +1,75 @@
+seed: 42
+data:
+  name: standard
+  path: <path/to/dataset>
+  image_normalizer: 
+    name: single_image_normalizer
+  num_workers: 4
+  cls_weights: [1.47, 5.10, 9.99]
+network:
+  name: ERFNet
+  num_classes: 3
+  dim_embeddings: 2
+cluster_model:
+    name: dbscan
+    noise_label: 0
+    eps: 0.025
+    min_samples: 64
+train:
+  # -------- Trainer --------
+  accelerator: gpu
+  devices: 1
+  benchmark: true
+  # -------- Data --------
+  shuffle: true
+  batch_size: 6
+  size: null
+  # -------- Optimization --------
+  max_epochs: 4096
+  warm_up_epochs: 32
+  lr: 1.0e-3
+  weight_decay: 1.0e-04
+  # -------- Steps --------
+  steps:
+    iou: true
+    divergence: true
+    curl: true
+    consistency: true
+val:
+  batch_size: 2
+  size: null
+  check_val_every_n_epoch: 4096
+test:
+  batch_size: 1
+  size: null
+predict:
+  batch_size: 1
+  size: null
+# -------- Callbacks --------
+exporters:
+  semantics: null 
+  instances: null
+visualizers:
+  ## ------- train, val, test, predict
+  input_image: null
+  ## ------- train, val, test
+  # embeddings_gt: null
+  # vector_field: null
+  # semantics_gt:
+  #   colors: ['#000000', '#00ff00', '#ff0000']
+  #   overlay: true 
+  #   alpha: 0.25
+  # instances_gt:
+  #   overlay: true 
+  #   alpha: 0.50
+  ## ------- train, val, test, pred
+  embeddings_fg: null
+  semantics_pred:
+    colors: ['#000000', '#00ff00', '#ff0000']
+    overlay: true 
+    alpha: 0.25
+  ## ------- test, pred
+  # instance_segmentation:
+  #   overlay: true
+  #   alpha: 0.50
+  # instance_clusters: null

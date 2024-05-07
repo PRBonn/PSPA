@@ -33,7 +33,7 @@ chmod +x ./setup.sh
 # Datasets
 - We use the [PhenoBench](https://www.phenobench.org/) dataset
 - However, as mentioned in the paper, we use a subset of images during training to ensure that each unique instance appears only once
-- Consequently, we provide in ```phenoBech_train_filenames.txt``` the filenames of images used during training
+- Consequently, we provide in ```phenobench_auxiliary/split.yaml``` the filenames of images used during training
 
 # Inference
 
@@ -61,6 +61,19 @@ Similiarly you can train a new model
 ```python
 conda activate pspa
 python train.py --config ./config/config-phenobench.yaml --export <path/to/export_dir>
+```
+
+- We reorganize the folder structure of PhenoBench
+- Thus, you should download the original [PhenoBench](https://www.phenobench.org/) and run the following script **before** training
+```
+cd ./phenobench_auxiliary
+chmod +x prepare_phenobench.sh
+./prepare_phenobench.sh <path/to/original/phenobench/dataset> <path/to/export/reorganized/phenobench/dataset>
+```
+- Before you start the training you need to specify the path to the reorganized dataset in the corresponding configuration file, e.g.:
+```yaml
+data:
+  path: <path/to/export/reorganized/phenobench/dataset>
 ```
 
 # License

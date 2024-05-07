@@ -32,6 +32,8 @@ chmod +x ./setup.sh
 
 # Datasets
 - We use the [PhenoBench](https://www.phenobench.org/) dataset
+- However, as mentioned in the paper, we use a subset of images during training to ensure that each unique instance appears only once
+- Consequently, we provide in ```phenoBech_train_filenames.txt``` the filenames of images used during training
 
 # Inference
 

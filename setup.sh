@@ -12,7 +12,7 @@ eval "$(conda shell.bash hook)"
 conda activate pspa
 
 pip install \
-    --extra-index-urpyl=https://pypi.nvidia.com \
+    --extra-index-url=https://pypi.nvidia.com \
     cudf-cu11==24.4.* cuml-cu11==24.4.*
 
 pip install -r requirements.txt

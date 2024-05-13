@@ -42,7 +42,7 @@ cd ..
 
 
 # Pretrained Models
-- We provide the [pretrained model](https://uni-bonn.sciebo.de/s/7gDikkAynXM3avv) using ERFNet as network architecture
+- We provide the [pretrained model](http://ipb.uni-bonn.de/html/deeplearningmodels/weyler2024ral/model.ckpt) using ERFNet as network architecture
 
 # Inference
 

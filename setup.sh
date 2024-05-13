@@ -2,10 +2,8 @@
 
 if ! command -v conda > /dev/null 2>&1
 then 
-  wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh
-  bash ~/miniconda.sh -b -p $HOME/miniconda
-  source $HOME/miniconda/bin/activate
-  conda init --all
+  echo "Please install conda on your machine"
+  exit 1
 fi 
 
 conda create -n pspa python=3.9

@@ -19,29 +19,39 @@ some blob-like labels for the background.
 
 ![Annotations](./static/annotations.jpg)
 
+# Requirements
+- We assume that ```wget``` is installed on your machine
+- We use ```conda``` to setup a virtual environment - in case ```conda``` is not installed on your machine follow the offical [instructions](https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html) (we recommend miniconda)
+
 # Setup
-We use miniconda to setup a virtual environment.
-The following script will install miniconda in case it is not already installed and setup a virutal environment denoted as *pspa*
+The following script will setup a virutal environment denoted as *pspa*
 ```bash
-chmod +x ./setup.sh
 ./setup.sh
 ```
-
-# Pretrained Models
-- We provide the [pretrained model](https://uni-bonn.sciebo.de/s/7gDikkAynXM3avv) using ERFNet as network architecture
 
 # Datasets
 - We use the [PhenoBench](https://www.phenobench.org/) dataset
 - However, as mentioned in the paper, we use a subset of images during training to ensure that each unique instance appears only once
 - Consequently, we provide in ```phenobench_auxiliary/split.yaml``` the filenames of images used during training
+- To download the dataset and organize it in the expected format run the following script
+```bash 
+cd ./phenobench_auxiliary
+./get_phenobench.sh <full/path/to/download/PhenoBench>
+cd ..
+```
+
+
+# Pretrained Models
+- We provide the [pretrained model](https://uni-bonn.sciebo.de/s/7gDikkAynXM3avv) using ERFNet as network architecture
 
 # Inference
 
 Before you start the inference you need to specify the path to the dataset in the corresponding configuration file, e.g.:
 ```yaml
 data:
-  path: data/PhenoBench/test
+  path: <full/path/to/download/PhenoBench/test>
 ```
+Please change only ```<full/path/to/download/PhenoBench>``` according to your previously specified path to download PhenoBench but keep ```test``` as a directory at the very end.
 
 Next, you can run the model in inference mode
 ```python
@@ -63,18 +73,12 @@ conda activate pspa
 python train.py --config ./config/config-phenobench.yaml --export <path/to/export_dir>
 ```
 
-- We reorganize the folder structure of PhenoBench
-- Thus, you should download the original [PhenoBench](https://www.phenobench.org/) and run the following script **before** training
-```
-cd ./phenobench_auxiliary
-chmod +x prepare_phenobench.sh
-./prepare_phenobench.sh <path/to/original/phenobench/dataset> <path/to/export/reorganized/phenobench/dataset>
-```
-- Before you start the training you need to specify the path to the reorganized dataset in the corresponding configuration file, e.g.:
+- Before you start the training you need to specify the path to the dataset in the corresponding configuration file, e.g.:
 ```yaml
 data:
-  path: <path/to/export/reorganized/phenobench/dataset>
+  path: <full/path/to/download/PhenoBench/>
 ```
+where ```<full/path/to/download/PhenoBench>``` matches the path you specified to download the PhenoBench dataset.
 
 # License
 This software is released under a creative commons license which allows for personal and research use only. For a commercial license please contact the authors. You can view a license summary [here](https://creativecommons.org/licenses/by-nc/4.0/).

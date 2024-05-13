@@ -51,7 +51,7 @@ exporters:
   instances: null
 visualizers:
   ## ------- train, val, test, predict
-  input_image: null
+  # input_image: null
   ## ------- train, val, test
   # embeddings_gt: null
   # vector_field: null

@@ -76,7 +76,7 @@ python train.py --config ./config/config-phenobench.yaml --export <path/to/expor
 - Before you start the training you need to specify the path to the dataset in the corresponding configuration file, e.g.:
 ```yaml
 data:
-  path: <full/path/to/download/PhenoBench/>
+  path: <full/path/to/download/PhenoBench>
 ```
 where ```<full/path/to/download/PhenoBench>``` matches the path you specified to download the PhenoBench dataset.
 

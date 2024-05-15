@@ -4,7 +4,7 @@ data:
   path: <path/to/dataset>
   image_normalizer: 
     name: single_image_normalizer
-  num_workers: 4
+  num_workers: 0
   cls_weights: [1.47, 5.10, 9.99]
 network:
   name: ERFNet

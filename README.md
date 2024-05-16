@@ -88,7 +88,13 @@ python train.py --config ./config/config-phenobench.yaml --export <path/to/expor
 data:
   path: <full/path/to/download/PhenoBench>
 ```
-where ```<full/path/to/download/PhenoBench>``` matches the path you specified to download the PhenoBench dataset (i.e. without the <.../test>)
+where ```<full/path/to/download/PhenoBench>``` matches the path you specified to download the PhenoBench dataset (i.e. without the <.../test> at the very end).
+
+In case you face ```CUDA out of memory``` you may change the batch size during training via the configuration file (```config/config-phenobench.yaml```), e.g.:
+```yaml
+train:
+  batch_size: 2
+``````
 
 # License
 This software is released under a creative commons license which allows for personal and research use only. For a commercial license please contact the authors. You can view a license summary [here](https://creativecommons.org/licenses/by-nc/4.0/).

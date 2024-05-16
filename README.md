@@ -20,7 +20,7 @@ some blob-like labels for the background.
 ![Annotations](./static/annotations.jpg)
 
 # Requirements
-- We assume that ```wget``` is installed on your machine and that your CUDA Runtime version is 11.*
+- We assume that ```wget``` is installed on your machine and that your CUDA Runtime version is >= 11.0
 - We use ```conda``` to setup a virtual environment - in case ```conda``` is not installed on your machine follow the offical [instructions](https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html) (we recommend miniconda)
 
 # Setup

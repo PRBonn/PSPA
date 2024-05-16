@@ -42,7 +42,11 @@ cd ..
 
 
 # Pretrained Models
-- We provide the [pretrained model](https://www.ipb.uni-bonn.de/html/deeplearningmodels/weyler2024ral/model.ckpt) using ERFNet as network architecture
+We provide pretrained models using ERFNet as network architecture that are trained with different amount of partial annotations:
+- [Model](https://www.ipb.uni-bonn.de/html/deeplearningmodels/weyler2024ral/model_100.ckpt) trained with all annotations
+- [Model](https://www.ipb.uni-bonn.de/html/deeplearningmodels/weyler2024ral/model_050.ckpt) trained with 50% of all annotations
+- [Model](https://www.ipb.uni-bonn.de/html/deeplearningmodels/weyler2024ral/model_025.ckpt) trained with 25% of all annotations
+- [Model](https://www.ipb.uni-bonn.de/html/deeplearningmodels/weyler2024ral/model_010.ckpt) trained with 10% of all annotations
 
 # Inference
 

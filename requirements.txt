@@ -7,4 +7,3 @@ oyaml
 torchvision==0.14.0
 distinctipy
 kornia==0.6.4
-distinctipy

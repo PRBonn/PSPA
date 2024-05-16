@@ -74,7 +74,7 @@ To be more specific about the paths:
 
 # Evaluation
 Since PhenoBench provides a hidden test set you need to register for the corresponding [CodaLab challenge](https://codalab.lisn.upsaclay.fr/competitions/14153) and upload your results
-run the evaluation. 
+to run the evaluation. 
 
 # Training
 Similiarly you can train a new model

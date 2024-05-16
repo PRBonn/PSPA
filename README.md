@@ -66,6 +66,12 @@ conda activate pspa
 python auxiliary/merge_plants_sem.py --semantics <path/to/previously/predicted/semantics> --plants <path/to/previously/predicted/plant/instances> --export <path/to/merged_export_dir>
 ```
 
+To be more specific about the paths:
+- ```<path/to/previously/predicted/semantics>``` should be ```<path/to/export_dir/lightning_logs/version_*/predict/export/semantics/000>```
+- ```<path/to/previously/predicted/plant/instances>``` shoulde be ```<path/to/export_dir/lightning_logs/version_*/predict/export/instances/000>```
+- Both paths contain png files with the previous semantic and instance predictions
+
+
 # Evaluation
 Since PhenoBench provides a hidden test set you need to register for the corresponding [CodaLab challenge](https://codalab.lisn.upsaclay.fr/competitions/14153) and upload your results
 run the evaluation. 

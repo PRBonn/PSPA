@@ -66,6 +66,10 @@ conda activate pspa
 python auxiliary/merge_plants_sem.py --semantics <path/to/previously/predicted/semantics> --plants <path/to/previously/predicted/plant/instances> --export <path/to/merged_export_dir>
 ```
 
+# Evaluation
+Since PhenoBench provides a hidden test set you need to register for the corresponding [CodaLab challenge](https://codalab.lisn.upsaclay.fr/competitions/14153) and upload your results
+run the evaluation. 
+
 # Training
 Similiarly you can train a new model
 ```python
@@ -78,7 +82,7 @@ python train.py --config ./config/config-phenobench.yaml --export <path/to/expor
 data:
   path: <full/path/to/download/PhenoBench>
 ```
-where ```<full/path/to/download/PhenoBench>``` matches the path you specified to download the PhenoBench dataset.
+where ```<full/path/to/download/PhenoBench>``` matches the path you specified to download the PhenoBench dataset (i.e. without the <.../test>)
 
 # License
 This software is released under a creative commons license which allows for personal and research use only. For a commercial license please contact the authors. You can view a license summary [here](https://creativecommons.org/licenses/by-nc/4.0/).

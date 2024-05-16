@@ -50,9 +50,9 @@ exporters:
   semantics: null 
   instances: null
 visualizers:
-  ## ------- train, val, test, predict
+  ## ------- can be used for: train, val, test, predict - uncomment to use this vis
   # input_image: null
-  ## ------- train, val, test
+  ## ------- can be used for: train, val, test - uncomment to use this vis
   # embeddings_gt: null
   # vector_field: null
   # semantics_gt:
@@ -62,13 +62,13 @@ visualizers:
   # instances_gt:
   #   overlay: true 
   #   alpha: 0.50
-  ## ------- train, val, test, pred
+  ## ------- can be used for: train, val, test, pred
   embeddings_fg: null
   semantics_pred:
     colors: ['#000000', '#00ff00', '#ff0000']
     overlay: true 
     alpha: 0.25
-  ## ------- test, pred
+  ## ------- can be used for: test, pred
   # instance_segmentation:
   #   overlay: true
   #   alpha: 0.50

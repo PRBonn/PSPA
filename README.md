@@ -20,11 +20,11 @@ some blob-like labels for the background.
 ![Annotations](./static/annotations.jpg)
 
 # Requirements
-- We assume that ```wget``` and ```pip``` is installed on your machine
+- We assume that ```wget``` is installed on your machine and that your CUDA Runtime version is 11.*
 - We use ```conda``` to setup a virtual environment - in case ```conda``` is not installed on your machine follow the offical [instructions](https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html) (we recommend miniconda)
 
 # Setup
-The following script will setup a virutal environment denoted as *pspa*
+The following script will setup a virtual environment denoted as *pspa*
 ```bash
 ./setup.sh
 ```
@@ -33,7 +33,7 @@ The following script will setup a virutal environment denoted as *pspa*
 - We use the [PhenoBench](https://www.phenobench.org/) dataset
 - However, as mentioned in the paper, we use a subset of images during training to ensure that each unique instance appears only once
 - Consequently, we provide in ```phenobench_auxiliary/split.yaml``` the filenames of images used during training
-- To download the dataset and organize it in the expected format run the following script
+- To download the dataset and organize it in the expected format run the following script (requires approx. 15GB)
 ```bash 
 cd ./phenobench_auxiliary
 ./get_phenobench.sh <full/path/to/download/PhenoBench>
@@ -42,11 +42,11 @@ cd ..
 
 
 # Pretrained Models
-- We provide the [pretrained model](http://ipb.uni-bonn.de/html/deeplearningmodels/weyler2024ral/model.ckpt) using ERFNet as network architecture
+- We provide the [pretrained model](https://www.ipb.uni-bonn.de/html/deeplearningmodels/weyler2024ral/model.ckpt) using ERFNet as network architecture
 
 # Inference
 
-Before you start the inference you need to specify the path to the dataset in the corresponding configuration file, e.g.:
+Before you start the inference you need to specify the path to the dataset in the corresponding configuration file (```config/config-phenobench.yaml```), e.g.:
 ```yaml
 data:
   path: <full/path/to/download/PhenoBench/test>
@@ -60,7 +60,7 @@ python predict.py --config ./config/config-phenobench.yaml  --export <path/to/ex
 ```
 In the specified ```<path/to/export_dir>``` you will find the predicted semantics and plant instances.
 
-In case you want to apply our proposed *merging procedure* you need run the following subsequently
+In case you want to apply our proposed *fusing procedure*, i.e., assign an unique semantic class to each instance, you need run the following subsequently
 ```python
 conda activate pspa
 python auxiliary/merge_plants_sem.py --semantics <path/to/previously/predicted/semantics> --plants <path/to/previously/predicted/plant/instances> --export <path/to/merged_export_dir>

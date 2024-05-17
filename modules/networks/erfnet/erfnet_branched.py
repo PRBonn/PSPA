@@ -34,7 +34,7 @@ class BranchedERFNet(nn.Module):
       output_conv.weight.fill_(0)
 
   def load_encoder_decoder_pretrained(self):
-        path = "/home/janw/projects/instance_segmentation/pretrained/erfnet/erfnet_pretrained.pth"
+        path = "/custom/path/to/pretrained/model.pth"
         ckpt_dict = torch.load(path)
         
         ckpt_dict_encoder_new = {}
